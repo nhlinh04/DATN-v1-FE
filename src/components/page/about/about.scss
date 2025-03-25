@@ -1,0 +1,334 @@
+.about-container {
+    font-family: "Arial", sans-serif;
+    color: #333;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        width: 100%;
+        max-height: 400px;
+        overflow: hidden;
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 0; /* Đưa xuống sát đáy */
+            left: 0;
+            width: 100%; /* Chiều rộng full */
+            background: rgba(0, 0, 0, 0.4); /* Nền mờ */    
+            color: #fff;
+            padding: 20px 40px; /* Khoảng cách đẹp hơn */
+            text-align: left; /* Căn lề trái */
+
+            h1 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 1.2rem;
+                max-width: 800px;
+                color: white;
+            }
+        }
+    }
+
+    /* Lý do chọn chúng tôi */
+    .reasons {
+        padding: 60px 0;
+        
+        h2 {
+            font-size: 2rem;
+            color: #85D148;
+            margin-bottom: 20px;
+        }
+
+        .reason-items {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .reason-item {
+            width: 200px;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: #f8f8f8;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+
+            img {
+                width: 60px;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 1rem;
+                font-weight: bold;
+            }
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+    }
+
+    /* Giới thiệu chung */
+    .introduction {
+        color: #fff;
+        padding: 60px 20px;
+        text-align: center;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+    }
+
+    /* Công nghệ sản xuất */
+    .technology, .products {
+        padding: 80px 20px;
+    
+        h2 {
+            font-size: 2.5rem;
+            color: #85D148;
+            margin-bottom: 30px;
+        }
+    
+        /* Tạo lưới đẹp hơn */
+        .tech-items, .product-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 40px;
+            justify-items: center;
+        }
+    
+        .tech-item, .product-item {
+            width: 100%;
+            max-width: 400px;
+            padding: 25px;
+            background: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+    
+            img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 15px;
+            }
+    
+            h5 {
+                font-weight: bold;
+                color: #333;
+                font-size: 20px;
+                
+            }
+    
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    /* Sản phẩm nổi bật */
+    .products {
+        background: #f8f8f8;
+        padding-bottom: 100px;
+    
+        .order-btn {
+            background: #85D148;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+    
+            &:hover {
+                background: #6fb83a;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+
+}
+
+/* Hiệu ứng động */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.introduction {
+    background-color: #f9f6f1; // Màu nền nhẹ nhàng
+    padding: 80px 0;
+  
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+  
+    .intro-content {
+      flex: 1;
+      max-width: 600px;
+  
+      .intro-title {
+        font-size: 2.5rem;
+        color: #3a7d44; // Màu xanh tự nhiên
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 15px;
+      }
+    }
+  
+    .intro-images {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+  
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+  
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  
+    @media (max-width: 1024px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .intro-content {
+        max-width: 100%;
+      }
+  
+      .intro-images {
+        .grid {
+          grid-template-columns: 1fr;
+          
+          img {
+            max-width: 80%;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+  
+/* Chứng nhận chất lượng */
+.certificate {
+    background: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+
+    h2 {
+        font-size: 2.5rem;
+        color: #2F7336;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto 40px;
+    }
+
+    /* Bố cục chứng nhận */
+    .cert-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px; /* Khoảng cách giữa các chứng nhận */
+        flex-wrap: nowrap; /* Giữ tất cả trên 1 dòng */
+    }
+
+    .cer-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 220px;
+        min-width: 180px; /* Giữ kích thước tối thiểu để tránh bị co lại */
+
+        img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        span {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+
+    /* Đáp ứng trên màn hình nhỏ */
+    @media (max-width: 1024px) {
+        .cert-items {
+            flex-wrap: wrap; /* Khi màn hình nhỏ, nó sẽ tự động xuống hàng */
+            gap: 40px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .cert-items {
+            flex-direction: column; /* Xếp dọc khi màn hình nhỏ */
+        }
+
+        .cert-item {
+            width: 100%;
+            max-width: 250px;
+        }
+    }
+}
+

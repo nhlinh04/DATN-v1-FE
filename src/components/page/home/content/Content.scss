@@ -1,0 +1,578 @@
+.FeaturedProduct{
+  width: 100%;
+}
+
+.hover-card .overlay-content {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-card:hover .overlay-content {
+    opacity: 1;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.FeaturedProduct .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Cân đối nội dung */
+    align-items: center;
+    height: 100%;
+    /* Đảm bảo chiều cao đồng nhất */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Tạo hiệu ứng nổi nhẹ */
+    border: 1px solid #ddd;
+    /* Đường viền nhạt */
+    border-radius: 8px;
+    /* Góc bo tròn */
+    transition: transform 0.2s ease-in-out;
+}
+
+.FeaturedProduct .card:hover {
+    transform: translateY(-5px);
+    /* Hiệu ứng hover */
+}
+
+.FeaturedProduct .image-container {
+    width: 400px;
+    height: 50px;
+    /* Đồng bộ chiều cao ảnh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Giữ ảnh không bị vỡ layout */
+}
+
+.FeaturedProduct .image-container img {
+    width: auto;
+    height: 100%;
+    /* Ảnh co giãn theo chiều cao */
+    object-fit: cover;
+    /* Đảm bảo ảnh không bị méo */
+}
+
+.FeaturedProduct .product-pricing {
+    margin-top: auto;
+    /* Đẩy phần giá xuống cuối */
+    text-align: center;
+    /* Canh giữa văn bản */
+}
+
+.FeaturedProduct .col-lg-3,
+.FeaturedProduct .col-md-4,
+.FeaturedProduct .col-sm-6,
+.FeaturedProduct .col-12 {
+    padding: 15px;
+    /* Khoảng cách giữa các khối */
+}
+
+.FeaturedProduct .row {
+    margin: 0;
+    /* Loại bỏ margin thừa */
+}
+
+.slider-container {
+    // margin: 25px;
+    // padding: 0 15px;
+    max-width: 100%;
+
+    .slick-slider {
+      // position: relative;
+      display: block;
+      margin: auto;
+      max-width: 1200px;
+  
+      .slick-list {
+        margin: 0 -10px;
+        overflow: hidden; /* Ensures content does not overflow */
+      }
+  
+      .slick-track {
+        display: flex;
+        align-items: center;
+      }
+  
+      .slick-slide {
+  
+        .product-slide {
+            .card {
+              display: flex; /* Ensures proper alignment */
+              flex-direction: column; /* Aligns children vertically */
+              justify-content: space-between; /* Spreads content evenly */
+              border: 0;
+              border-radius: 0px; 
+              overflow: hidden;
+              transition: transform 0.3s, box-shadow 0.3s;
+              height: 400px; /* Ensures all cards are the same height */
+          
+
+              &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+              }
+          
+              .image-container {
+                width: 100%;
+                height: 400px; /* Set height for the image section */
+                overflow: hidden;
+                background-color: white;
+          
+                img {
+                  max-width: 100%;
+                  height: 100%; /* Ensures the image fills the container */
+                  object-fit: cover; /* Ensures image proportions are maintained */
+                }
+              }
+          
+              .card-body {
+                flex: 1; /* Allows body content to grow and align */
+                padding: 15px;
+                text-align: center;
+          
+                .product-name {
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: #333;
+                  margin-bottom: 10px;
+                }
+          
+                .product-pricing {
+                  .product-price {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #181819;
+                  }
+          
+                  .product-sale-price {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #dc3545;
+                  }
+          
+                  .product-original-price {
+                    font-size: 16px;
+                    color: #888;
+                    text-decoration: line-through;
+                  }
+                }
+              }
+            }
+          }
+          
+      }
+  
+      .slick-prev,
+      .slick-next {
+        position: absolute;
+        top: 0; /* Align with the top of the card */
+        bottom: 0; /* Stretch to match the height */
+        z-index: 10;
+        width: 70px; /* Set button width */
+        background-color: transparent; /* Transparent background */
+        color: #616161;
+        border: none;
+        font-size: 40px; /* Larger font for arrows */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: color 0.3s;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        transform: translateX(0); /* Ban đầu ở vị trí bình thường */
+      
+        &:hover {
+          color: #616161;
+          opacity: 1; 
+        }
+      
+        &.slick-disabled {
+          color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+      
+      .slick-prev {
+        left: -65px; /* Position button to the left */
+      }
+      
+      .slick-next {
+        right: -65px; /* Position button to the right */
+      }
+      
+
+      .slick-dots {
+        display: flex !important; /* Ensure dots are displayed as a flexbox */
+        justify-content: center; /* Center dots horizontally */
+        align-items: center; /* Align dots vertically */
+        margin-top: 15px; /* Add spacing from the slider */
+        list-style: none; /* Remove default list styling */
+      
+        li {
+          margin: 0 5px; /* Add space between dots */
+      
+          button {
+            width: 12px;
+            height: 12px;
+            background-color: #ddd; /* Default dot color */
+            border: none;
+            border-radius: 50%; /* Circular dots */
+            cursor: pointer;
+            padding: 0; /* Remove button padding */
+      
+            &:hover,
+            &.slick-active {
+              background-color: #007bff; /* Blue color for active and hover states */
+            }
+          }
+        }
+      }
+      
+    }
+  }
+  /* Cắt văn bản dài bằng '...' */
+.truncate-text {
+  display: inline-block;
+  max-width: 250px; /* Giới hạn chiều rộng */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  cursor: pointer; /* Gợi ý có thể hover */
+}
+
+/* Tooltip khi hover */
+.truncate-text:hover {
+  position: relative;
+}
+
+.truncate-text:hover::after {
+  content: attr(title); /* Lấy nội dung từ thuộc tính title */
+  position: absolute;
+  bottom: 120%; /* Đẩy tooltip lên trên */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+/* Tam giác nhỏ ở dưới tooltip */
+.truncate-text:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 110%; /* Điều chỉnh vị trí tam giác */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+  z-index: 99;
+}
+.slider-container {
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #F8F8F8;
+  // border-radius: 12px;
+  // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+
+.product-slide {
+  padding: 15px;
+}
+
+.product-slide .card {
+  width: 100%;
+  height: 100%;
+  // border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.image-container {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+      width: auto;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover img {
+      transform: scale(1.1);
+  }
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+}
+
+.product-pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .product-price {
+      font-size: 18px;
+      font-weight: bold;
+  }
+
+  .product-sale-price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #dc3545;
+  }
+
+  .product-original-price {
+      font-size: 14px;
+      color: #888;
+      text-decoration: line-through;
+  }
+}
+
+// Định dạng dấu chấm phân trang
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  list-style: none;
+
+  li {
+      margin: 0 5px;
+
+      button {
+          width: 10px;
+          height: 10px;
+          background-color: #ddd;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover,
+          &.slick-active {
+              background-color: #007bff;
+          }
+      }
+  }
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .img-ct{
+
+  }
+}
+
+.slider-sale{
+  margin: 50px auto;
+  padding: 30px;
+  background: url("../../../../../public/banner-sale.jpg") no-repeat center center;
+  background-size: cover;
+  width: 100%; /* Full chiều rộng màn hình */
+
+    // margin: 25px;
+    // padding: 0 15px;
+    max-width: 100%;
+
+    .slick-slider {
+      // position: relative;
+      display: block;
+      margin: auto;
+      max-width: 1200px;
+  
+      .slick-list {
+        margin: 0 -10px;
+        overflow: hidden; /* Ensures content does not overflow */
+      }
+  
+      .slick-track {
+        display: flex;
+        align-items: center;
+      }
+  
+      .slick-slide {
+  
+        .product-slide {
+            .card {
+              display: flex; /* Ensures proper alignment */
+              flex-direction: column; /* Aligns children vertically */
+              justify-content: space-between; /* Spreads content evenly */
+              border: 0;
+              border-radius: 0px; 
+              overflow: hidden;
+              transition: transform 0.3s, box-shadow 0.3s;
+              height: 400px; /* Ensures all cards are the same height */
+          
+
+              &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+              }
+          
+              .image-container {
+                width: 100%;
+                height: 400px; /* Set height for the image section */
+                overflow: hidden;
+                background-color: white;
+          
+                img {
+                  max-width: 100%;
+                  height: 100%; /* Ensures the image fills the container */
+                  object-fit: cover; /* Ensures image proportions are maintained */
+                }
+              }
+          
+              .card-body {
+                flex: 1; /* Allows body content to grow and align */
+                padding: 15px;
+                text-align: center;
+          
+                .product-name {
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: #333;
+                  margin-bottom: 10px;
+                }
+          
+                .product-pricing {
+                  .product-price {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #000000;
+                  }
+          
+                  .product-sale-price {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #dc3545;
+                  }
+          
+                  .product-original-price {
+                    font-size: 16px;
+                    color: #888;
+                    text-decoration: line-through;
+                  }
+                }
+              }
+            }
+          }
+          
+      }
+  
+      .slick-prev,
+      .slick-next {
+        position: absolute;
+        top: 0; /* Align with the top of the card */
+        bottom: 0; /* Stretch to match the height */
+        z-index: 10;
+        width: 70px; /* Set button width */
+        background-color: transparent; /* Transparent background */
+        color: #616161;
+        border: none;
+        font-size: 40px; /* Larger font for arrows */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: color 0.3s;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        transform: translateX(0); /* Ban đầu ở vị trí bình thường */
+      
+        &:hover {
+          color: #616161;
+          opacity: 1; 
+        }
+      
+        &.slick-disabled {
+          color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+      
+      .slick-prev {
+        left: -65px; /* Position button to the left */
+      }
+      
+      .slick-next {
+        right: -65px; /* Position button to the right */
+      }
+      
+
+      .slick-dots {
+        display: flex !important; /* Ensure dots are displayed as a flexbox */
+        justify-content: center; /* Center dots horizontally */
+        align-items: center; /* Align dots vertically */
+        margin-top: 15px; /* Add spacing from the slider */
+        list-style: none; /* Remove default list styling */
+      
+        li {
+          margin: 0 5px; /* Add space between dots */
+      
+          button {
+            width: 12px;
+            height: 12px;
+            background-color: #ddd; /* Default dot color */
+            border: none;
+            border-radius: 50%; /* Circular dots */
+            cursor: pointer;
+            padding: 0; /* Remove button padding */
+      
+            &:hover,
+            &.slick-active {
+              background-color: #007bff; /* Blue color for active and hover states */
+            }
+          }
+        }
+      }
+      
+    }
+}

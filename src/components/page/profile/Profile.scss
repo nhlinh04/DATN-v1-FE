@@ -1,0 +1,56 @@
+/* Profile container */
+.profile-page {
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8f9fa; /* Light background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.profile-page h6 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #0071e3; /* Blue border for the section title */
+  padding-bottom: 8px;
+}
+
+.profile-page .form-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.profile-page .form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.profile-page .input-group-text {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+}
+
+.profile-page .btn {
+  background-color: #0071e3;
+  color: white;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-page .btn:hover {
+  background-color: #005bb5;
+}
+
+.profile-page .text-danger {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Input focus styling */
+.profile-page .form-control:focus {
+  border-color: #0071e3;
+  box-shadow: 0 0 5px rgba(0, 113, 227, 0.3);
+}

@@ -1,0 +1,156 @@
+.collection-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Ensures elements remain in a single row */
+    gap: 20px; /* Optional: Adjusts spacing between the elements */
+    
+    .collection-head-title {
+        h1 {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+        }
+    }
+  
+    .collection-sidebar {
+        display: flex;
+        flex-wrap: nowrap; /* Prevents dropdowns from wrapping to a new line */
+        gap: 10px; /* Ensures spacing between dropdowns */
+    }
+}
+
+.collection-body {
+    padding-top: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .collection-head {
+        flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    }
+
+    .collection-head-title h1 {
+        font-size: 1.4rem; /* Adjust font size for smaller screens */
+    }
+
+    .collection-sidebar {
+        flex-wrap: wrap; /* Allows dropdowns to wrap on smaller screens */
+    }
+}
+
+.product-card {
+    position: relative;
+    max-width: 3000px; /* Adjust size as needed */
+    margin: auto;
+    cursor: pointer;
+    border: 0;
+
+    :hover{
+        border: 0;
+    }
+    img {
+        width:350px;
+        height: 300px;
+        
+        border-radius: 8px;
+    }
+
+    .button-overlay {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        gap: 10px;
+    }
+
+    .circle-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+        p {
+            font-weight: bold;
+        }
+    }
+}
+ /* Cắt văn bản dài bằng '...' */
+ .truncate-text {
+    display: inline-block;
+    max-width: 150px; /* Giới hạn chiều rộng */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    cursor: pointer; /* Gợi ý có thể hover */
+  }
+  
+  /* Tooltip khi hover */
+  .truncate-text:hover {
+    position: relative;
+  }
+  
+  .truncate-text:hover::after {
+    content: attr(title); /* Lấy nội dung từ thuộc tính title */
+    position: absolute;
+    bottom: 120%; /* Đẩy tooltip lên trên */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  
+  /* Tam giác nhỏ ở dưới tooltip */
+  .truncate-text:hover::before {
+    content: "";
+    position: absolute;
+    bottom: 110%; /* Điều chỉnh vị trí tam giác */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+    z-index: 99;
+  }
+  
+.link-back{
+
+      a {
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+      }
+      &:hover{
+        padding: 5px;
+        background-color: rgb(224, 222, 222);
+      }
+}
+
+.list-gr {
+    position: relative;
+    padding: 10px;
+}
+
+.list-gr::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.2));
+    box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.3);
+}
